@@ -10,6 +10,7 @@ export interface User {
   email: string;
   role: UserRole;
   avatar?: string;
+  department?: string;
 }
 
 export interface AppState {
@@ -60,25 +61,28 @@ const initialAppConfig = {
   environment: 'development' as const,
 };
 
-// Usuarios semilla para desarrollo
+// Usuarios semilla para desarrollo (ahora con Supabase no son necesarios)
 const seedUsers: Record<UserRole, User> = {
   admin: {
     id: 'admin-001',
     name: 'Administrador Sistema',
     email: 'admin@ingenieriacopilot.com',
     role: 'admin',
+    department: 'Sistemas',
   },
   ingeniero: {
     id: 'eng-001',
     name: 'Juan Pérez',
     email: 'juan.perez@ingenieriacopilot.com',
     role: 'ingeniero',
+    department: 'Ingeniería',
   },
   compras: {
     id: 'pur-001',
     name: 'María González',
     email: 'maria.gonzalez@ingenieriacopilot.com',
     role: 'compras',
+    department: 'Compras',
   },
 };
 
